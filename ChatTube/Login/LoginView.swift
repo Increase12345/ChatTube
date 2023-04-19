@@ -23,8 +23,10 @@ struct LoginView: View {
                         .textInputAutocapitalization(.never)
                     SecureField("password", text: $vm.password)
                 }
+                .shadow(radius: 5)
                 
                 SignInButton(vm: vm)
+                    .shadow(radius: 5)
                 
                 Text(vm.actionMessage)
             }
