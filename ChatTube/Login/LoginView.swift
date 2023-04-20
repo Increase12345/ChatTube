@@ -42,7 +42,7 @@ struct LoginView: View {
                 ImagePicker(image: $vm.profileImage)
             }
         } else {
-            MainMessagesView(loginVM: vm)
+            MessagesTabView(loginVM: vm)
         }
     }
 }

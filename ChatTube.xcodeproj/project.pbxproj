@@ -24,6 +24,9 @@
 		400E812F29E61FF800770A73 /* ImagePickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E812E29E61FF800770A73 /* ImagePickerButton.swift */; };
 		400E813129E6206D00770A73 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E813029E6206D00770A73 /* SignInButton.swift */; };
 		400E813329E628CF00770A73 /* PickerSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E813229E628CF00770A73 /* PickerSegment.swift */; };
+		400E814F29F0C68200770A73 /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E814E29F0C68200770A73 /* ChatUserView.swift */; };
+		400E815129F0E94200770A73 /* MessagesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815029F0E94200770A73 /* MessagesTabView.swift */; };
+		400E815329F0EA6400770A73 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815229F0EA6400770A73 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		400E812E29E61FF800770A73 /* ImagePickerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerButton.swift; sourceTree = "<group>"; };
 		400E813029E6206D00770A73 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		400E813229E628CF00770A73 /* PickerSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSegment.swift; sourceTree = "<group>"; };
+		400E814E29F0C68200770A73 /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = "<group>"; };
+		400E815029F0E94200770A73 /* MessagesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTabView.swift; sourceTree = "<group>"; };
+		400E815229F0EA6400770A73 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,9 @@
 			children = (
 				400E811F29E5031800770A73 /* MainMessagesView.swift */,
 				400E812229E5E6DC00770A73 /* MainMessagesViewModel.swift */,
+				400E815029F0E94200770A73 /* MessagesTabView.swift */,
+				400E814E29F0C68200770A73 /* ChatUserView.swift */,
+				400E815229F0EA6400770A73 /* SettingsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -202,11 +211,14 @@
 				400E811E29E502F400770A73 /* ImagePicker.swift in Sources */,
 				400E813129E6206D00770A73 /* SignInButton.swift in Sources */,
 				400E812829E5E72600770A73 /* LoginViewViewModel.swift in Sources */,
+				400E814F29F0C68200770A73 /* ChatUserView.swift in Sources */,
 				400E812029E5031800770A73 /* MainMessagesView.swift in Sources */,
 				400E810229E501F900770A73 /* ChatTubeApp.swift in Sources */,
 				400E812629E5E70900770A73 /* LoginView.swift in Sources */,
 				400E812329E5E6DC00770A73 /* MainMessagesViewModel.swift in Sources */,
 				400E812F29E61FF800770A73 /* ImagePickerButton.swift in Sources */,
+				400E815329F0EA6400770A73 /* SettingsView.swift in Sources */,
+				400E815129F0E94200770A73 /* MessagesTabView.swift in Sources */,
 				400E813329E628CF00770A73 /* PickerSegment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

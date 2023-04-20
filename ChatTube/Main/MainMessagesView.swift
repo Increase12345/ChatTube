@@ -13,13 +13,21 @@ struct MainMessagesView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Main messages")
+            ScrollView {
+                VStack(spacing: 15) {
+                    ForEach(0..<10, id: \.self) { _ in
+                        ChatUserView()
+                        Divider()
+                    }
+                }
                 .navigationTitle("Chats")
+                .padding()
                 .toolbar {
                     Button("LogOut") {
                         loginVM.isAuthorized = false
                     }
                 }
+            }
         }
     }
 }
