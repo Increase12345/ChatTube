@@ -9,18 +9,23 @@ import SwiftUI
 
 struct MainMessagesView: View {
     @StateObject private var vm = MainMessagesViewModel()
+    @ObservedObject var loginVM: LoginViewViewModel
     
     var body: some View {
-        if vm.isAuthorized {
+        NavigationStack {
             Text("Main messages")
-        } else {
-            LoginView()
+                .navigationTitle("Chats")
+                .toolbar {
+                    Button("LogOut") {
+                        loginVM.isAuthorized = false
+                    }
+                }
         }
     }
 }
 
 struct MainMessagesView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMessagesView()
+        MainMessagesView(loginVM: LoginViewViewModel())
     }
 }

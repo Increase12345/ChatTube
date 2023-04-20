@@ -12,6 +12,7 @@ import FirebaseStorage
 import FirebaseFirestore
 
 class LoginViewViewModel: ObservableObject {
+    
     let firebaseAuth = Auth.auth()
     let firebaseStorage = Storage.storage()
     let firestore = Firestore.firestore()
@@ -23,6 +24,8 @@ class LoginViewViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var loginMode = true
+    
+    @Published var isAuthorized = false
     
     func loginAction() {
         if loginMode {
@@ -40,6 +43,7 @@ class LoginViewViewModel: ObservableObject {
             }
             
             self.actionMessage = "Successfully logged in as \(result?.user.uid ?? "")"
+            self.isAuthorized = true
         }
     }
     
@@ -71,9 +75,24 @@ class LoginViewViewModel: ObservableObject {
                     self.actionMessage = "Failed to retrive download url \(error)"
                     return
                 }
+                guard let url = url else {return}
                 
-                self.actionMessage = "Image saved"
+                self.storeUserInformation(profileImageUrl: url)
             }
         }
+    }
+    
+    func storeUserInformation(profileImageUrl: URL) {
+        guard let uid = firebaseAuth.currentUser?.uid else { return }
+        let userData = ["email": email, "uid": uid, "profileImageUrl": profileImageUrl.absoluteString] as [String : Any]
+        firestore.collection("users")
+            .document(uid).setData(userData) { error in
+                if let error = error {
+                    self.actionMessage = "\(error)"
+                    return
+                }
+                
+                self.isAuthorized = true
+            }
     }
 }

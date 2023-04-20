@@ -24,7 +24,7 @@ struct ChatTubeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainMessagesView()
+            LoginView()
         }
     }
 }
