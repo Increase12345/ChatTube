@@ -11,7 +11,7 @@ struct LoginView: View {
     @EnvironmentObject private var loginVM: LoginViewViewModel
     
     var body: some View {
-            if !loginVM.isAuthorized {
+            if !loginVM.isUserAuthorized {
                 VStack {
                     VStack(spacing: 35) {
                         PickerSegment()

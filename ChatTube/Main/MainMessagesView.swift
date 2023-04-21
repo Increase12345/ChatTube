@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainMessagesView: View {
     @EnvironmentObject var loginVM: LoginViewViewModel
+    @EnvironmentObject var messagesVM: MainMessagesViewModel
     
     var body: some View {
         NavigationStack {
@@ -31,6 +32,9 @@ struct MainMessagesView: View {
                 }
             }
         }
+        .task {
+            messagesVM.fetchCurrentUser()
+        }
     }
 }
 
@@ -38,5 +42,6 @@ struct MainMessagesView_Previews: PreviewProvider {
     static var previews: some View {
         MainMessagesView()
             .environmentObject(LoginViewViewModel())
+            .environmentObject(MainMessagesViewModel())
     }
 }

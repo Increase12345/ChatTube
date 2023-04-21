@@ -27,6 +27,8 @@
 		400E814F29F0C68200770A73 /* ChatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E814E29F0C68200770A73 /* ChatUserView.swift */; };
 		400E815129F0E94200770A73 /* MessagesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815029F0E94200770A73 /* MessagesTabView.swift */; };
 		400E815329F0EA6400770A73 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815229F0EA6400770A73 /* SettingsView.swift */; };
+		400E815629F3305800770A73 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815529F3305800770A73 /* FirebaseManager.swift */; };
+		400E815829F3387800770A73 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815729F3387800770A73 /* ChatUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		400E814E29F0C68200770A73 /* ChatUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUserView.swift; sourceTree = "<group>"; };
 		400E815029F0E94200770A73 /* MessagesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTabView.swift; sourceTree = "<group>"; };
 		400E815229F0EA6400770A73 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		400E815529F3305800770A73 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		400E815729F3387800770A73 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		400E810029E501F900770A73 /* ChatTube */ = {
 			isa = PBXGroup;
 			children = (
+				400E815429F3303400770A73 /* Firebase */,
 				400E812429E5E6F100770A73 /* Login */,
 				400E812129E5E68500770A73 /* Main */,
 				400E810129E501F900770A73 /* ChatTubeApp.swift */,
@@ -107,6 +112,7 @@
 			children = (
 				400E811F29E5031800770A73 /* MainMessagesView.swift */,
 				400E812229E5E6DC00770A73 /* MainMessagesViewModel.swift */,
+				400E815729F3387800770A73 /* ChatUser.swift */,
 				400E815029F0E94200770A73 /* MessagesTabView.swift */,
 				400E814E29F0C68200770A73 /* ChatUserView.swift */,
 				400E815229F0EA6400770A73 /* SettingsView.swift */,
@@ -124,6 +130,14 @@
 				400E813229E628CF00770A73 /* PickerSegment.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		400E815429F3303400770A73 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				400E815529F3305800770A73 /* FirebaseManager.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +222,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				400E815829F3387800770A73 /* ChatUser.swift in Sources */,
+				400E815629F3305800770A73 /* FirebaseManager.swift in Sources */,
 				400E811E29E502F400770A73 /* ImagePicker.swift in Sources */,
 				400E813129E6206D00770A73 /* SignInButton.swift in Sources */,
 				400E812829E5E72600770A73 /* LoginViewViewModel.swift in Sources */,

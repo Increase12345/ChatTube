@@ -7,15 +7,8 @@
 
 import Foundation
 import SwiftUI
-import Firebase
-import FirebaseStorage
-import FirebaseFirestore
 
 class LoginViewViewModel: ObservableObject {
-    
-    let firebaseAuth = Auth.auth()
-    let firebaseStorage = Storage.storage()
-    let firestore = Firestore.firestore()
     
     @Published var actionMessage = ""
     @Published var showImagePicker = false
@@ -25,7 +18,15 @@ class LoginViewViewModel: ObservableObject {
     @Published var password = ""
     @Published var loginMode = true
     
-    @Published var isAuthorized = false
+    @Published var isUserAuthorized = false
+    
+    init() {
+        if FirebaseManager.firebaseAuth.currentUser?.uid != nil {
+            isUserAuthorized = true
+        } else {
+            isUserAuthorized = false
+        }
+    }
     
     func loginAction() {
         if loginMode {
@@ -36,7 +37,7 @@ class LoginViewViewModel: ObservableObject {
     }
     
     private func loginUser() {
-        firebaseAuth.signIn(withEmail: email, password: password) { result, error in
+        FirebaseManager.firebaseAuth.signIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 self.actionMessage = "Failed to login \(error)"
                 return
@@ -44,12 +45,17 @@ class LoginViewViewModel: ObservableObject {
             
             self.email = ""
             self.password = ""
-            self.isAuthorized = true
+            self.isUserAuthorized = true
         }
     }
     
+    func signOut() {
+        try? FirebaseManager.firebaseAuth.signOut()
+        isUserAuthorized = false
+    }
+    
     private func createNewAccount() {
-        firebaseAuth.createUser(withEmail: email, password: password) { result, error in
+        FirebaseManager.firebaseAuth.createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 self.actionMessage = "Failed to create account \(error)"
                 return
@@ -60,8 +66,8 @@ class LoginViewViewModel: ObservableObject {
     }
     
     private func saveImageToStorage() {
-        guard let uid = firebaseAuth.currentUser?.uid else { return }
-        let ref = firebaseStorage.reference(withPath: uid)
+        guard let uid = FirebaseManager.firebaseAuth.currentUser?.uid else { return }
+        let ref = FirebaseManager.firebaseStorage.reference(withPath: uid)
         guard let imageData = profileImage?.jpegData(compressionQuality: 0.5) else { return }
         ref.putData(imageData) { metadata, error in
             if let error = error {
@@ -82,9 +88,9 @@ class LoginViewViewModel: ObservableObject {
     }
     
     func storeUserInformation(profileImageUrl: URL) {
-        guard let uid = firebaseAuth.currentUser?.uid else { return }
+        guard let uid = FirebaseManager.firebaseAuth.currentUser?.uid else { return }
         let userData = ["email": email, "uid": uid, "profileImageUrl": profileImageUrl.absoluteString] as [String : Any]
-        firestore.collection("users")
+        FirebaseManager.firestore.collection("users")
             .document(uid).setData(userData) { error in
                 if let error = error {
                     self.actionMessage = "Failed to store user info \(error)"
@@ -93,7 +99,7 @@ class LoginViewViewModel: ObservableObject {
                 
                 self.email = ""
                 self.password = ""
-                self.isAuthorized = true
+                self.isUserAuthorized = true
             }
     }
 }
