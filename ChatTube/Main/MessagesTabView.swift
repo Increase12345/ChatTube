@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct MessagesTabView: View {
-    @ObservedObject var loginVM: LoginViewViewModel
     
     var body: some View {
         TabView {
-            MainMessagesView(loginVM: loginVM)
+            MainMessagesView()
                 .tabItem {
                     Image(systemName: "ellipsis.message")
                     Text("Messages")
@@ -29,6 +28,6 @@ struct MessagesTabView: View {
 
 struct MessagesTabView_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesTabView(loginVM: LoginViewViewModel())
+        MessagesTabView()
     }
 }

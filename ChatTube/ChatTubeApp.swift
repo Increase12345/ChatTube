@@ -22,9 +22,12 @@ struct ChatTubeApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject var loginVM = LoginViewViewModel()
+    
     var body: some Scene {
         WindowGroup {
             LoginView()
+                .environmentObject(loginVM)
         }
     }
 }

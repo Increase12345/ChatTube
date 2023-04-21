@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct MainMessagesView: View {
-    @StateObject private var vm = MainMessagesViewModel()
-    @ObservedObject var loginVM: LoginViewViewModel
+    @EnvironmentObject var loginVM: LoginViewViewModel
     
     var body: some View {
         NavigationStack {
@@ -23,8 +22,11 @@ struct MainMessagesView: View {
                 .navigationTitle("Chats")
                 .padding()
                 .toolbar {
-                    Button("LogOut") {
-                        loginVM.isAuthorized = false
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                            .font(.title3.bold())
                     }
                 }
             }
@@ -34,6 +36,7 @@ struct MainMessagesView: View {
 
 struct MainMessagesView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMessagesView(loginVM: LoginViewViewModel())
+        MainMessagesView()
+            .environmentObject(LoginViewViewModel())
     }
 }

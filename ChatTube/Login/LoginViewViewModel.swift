@@ -42,7 +42,8 @@ class LoginViewViewModel: ObservableObject {
                 return
             }
             
-            self.actionMessage = "Successfully logged in as \(result?.user.uid ?? "")"
+            self.email = ""
+            self.password = ""
             self.isAuthorized = true
         }
     }
@@ -53,8 +54,6 @@ class LoginViewViewModel: ObservableObject {
                 self.actionMessage = "Failed to create account \(error)"
                 return
             }
-            
-            self.actionMessage = "Succsessfully created user \(result?.user.uid ?? "")"
             
             self.saveImageToStorage()
         }
@@ -88,10 +87,12 @@ class LoginViewViewModel: ObservableObject {
         firestore.collection("users")
             .document(uid).setData(userData) { error in
                 if let error = error {
-                    self.actionMessage = "\(error)"
+                    self.actionMessage = "Failed to store user info \(error)"
                     return
                 }
                 
+                self.email = ""
+                self.password = ""
                 self.isAuthorized = true
             }
     }

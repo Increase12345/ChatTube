@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PickerSegment: View {
-    @ObservedObject var vm: LoginViewViewModel
+    @EnvironmentObject var vm: LoginViewViewModel
     
     var body: some View {
         Picker("", selection: $vm.loginMode) {
@@ -23,6 +23,7 @@ struct PickerSegment: View {
 
 struct PickerSegment_Previews: PreviewProvider {
     static var previews: some View {
-        PickerSegment(vm: LoginViewViewModel())
+        PickerSegment()
+            .environmentObject(LoginViewViewModel())
     }
 }

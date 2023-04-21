@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInButton: View {
-    @ObservedObject var vm: LoginViewViewModel
+    @EnvironmentObject var vm: LoginViewViewModel
     
     var body: some View {
         Button {
@@ -27,6 +27,7 @@ struct SignInButton: View {
 
 struct SignInButton_Previews: PreviewProvider {
     static var previews: some View {
-        SignInButton(vm: LoginViewViewModel())
+        SignInButton()
+            .environmentObject(LoginViewViewModel())
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImagePickerButton: View {
-    @ObservedObject var vm: LoginViewViewModel
+    @EnvironmentObject var vm: LoginViewViewModel
     
     var body: some View {
         Button {
@@ -40,6 +40,7 @@ struct ImagePickerButton: View {
 
 struct ImagePickerButton_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePickerButton(vm: LoginViewViewModel())
+        ImagePickerButton()
+            .environmentObject(LoginViewViewModel())
     }
 }
