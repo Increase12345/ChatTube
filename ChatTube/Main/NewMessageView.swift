@@ -17,7 +17,7 @@ struct NewMessageView: View {
                 VStack(spacing: 15) {
                     ForEach(messagesVM.users) { user in
                         NavigationLink {
-                            MessageView(user: user)
+                            ChatView(user: user)
                         } label: {
                             ChatUserView(chatUser: user)
                         }
