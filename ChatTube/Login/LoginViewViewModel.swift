@@ -55,6 +55,10 @@ class LoginViewViewModel: ObservableObject {
     }
     
     private func createNewAccount() {
+        if profileImage == nil {
+            actionMessage = "You must select an avatar image!"
+            return
+        }
         FirebaseManager.firebaseAuth.createUser(withEmail: email, password: password) { result, error in
             if let error = error {
                 self.actionMessage = "Failed to create account \(error)"

@@ -27,13 +27,7 @@ class MainMessagesViewModel: ObservableObject {
                 }
                 
                 guard let data = snapshot?.data() else { return }
-                
-                let uid = data["uid"] as? String ?? ""
-                let email = data["email"] as? String ?? ""
-                let shortEmail = email.components(separatedBy: "@")[0]
-                let profileImageUrl = data["profileImageUrl"] as? String ?? ""
-                
-                self.chatUser = ChatUser(uid: uid, email: shortEmail, profileImageUrl: profileImageUrl)
+                self.chatUser = .init(data: data)
             }
     }
 }

@@ -87,6 +87,7 @@
 		400E810029E501F900770A73 /* ChatTube */ = {
 			isa = PBXGroup;
 			children = (
+				400E815929F35BE000770A73 /* Model */,
 				400E815429F3303400770A73 /* Firebase */,
 				400E812429E5E6F100770A73 /* Login */,
 				400E812129E5E68500770A73 /* Main */,
@@ -112,7 +113,6 @@
 			children = (
 				400E811F29E5031800770A73 /* MainMessagesView.swift */,
 				400E812229E5E6DC00770A73 /* MainMessagesViewModel.swift */,
-				400E815729F3387800770A73 /* ChatUser.swift */,
 				400E815029F0E94200770A73 /* MessagesTabView.swift */,
 				400E814E29F0C68200770A73 /* ChatUserView.swift */,
 				400E815229F0EA6400770A73 /* SettingsView.swift */,
@@ -138,6 +138,14 @@
 				400E815529F3305800770A73 /* FirebaseManager.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		400E815929F35BE000770A73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				400E815729F3387800770A73 /* ChatUser.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
