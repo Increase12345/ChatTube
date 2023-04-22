@@ -25,11 +25,11 @@ struct ChatView: View {
     
     private var messagesBar: some View {
         ScrollView {
-            ForEach(0..<10) { _ in
+            ForEach(chatViewVM.chatMessages) { message in
                 HStack {
                     Spacer()
                     HStack {
-                        Text("Fake message")
+                        Text(message.messageText)
                             .font(.title3)
                             .foregroundColor(.white)
                     }
