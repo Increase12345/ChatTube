@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MessagesTabView: View {
+    @EnvironmentObject var messagesVM: MainMessagesViewModel
     
     var body: some View {
         TabView {
@@ -22,6 +23,9 @@ struct MessagesTabView: View {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
+            }
+            .task {
+                messagesVM.fetchCurrentUser()
         }
     }
 }
@@ -29,5 +33,7 @@ struct MessagesTabView: View {
 struct MessagesTabView_Previews: PreviewProvider {
     static var previews: some View {
         MessagesTabView()
+            .environmentObject(MainMessagesViewModel())
+            .environmentObject(LoginViewViewModel())
     }
 }

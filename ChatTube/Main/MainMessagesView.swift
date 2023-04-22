@@ -32,9 +32,6 @@ struct MainMessagesView: View {
                 }
             }
         }
-        .task {
-            messagesVM.fetchCurrentUser()
-        }
     }
 }
 

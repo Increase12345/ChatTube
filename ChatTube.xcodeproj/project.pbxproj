@@ -123,11 +123,9 @@
 		400E812429E5E6F100770A73 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				400E815A29F35E5D00770A73 /* ExtensionViews */,
 				400E812529E5E70900770A73 /* LoginView.swift */,
 				400E812729E5E72600770A73 /* LoginViewViewModel.swift */,
-				400E813029E6206D00770A73 /* SignInButton.swift */,
-				400E812E29E61FF800770A73 /* ImagePickerButton.swift */,
-				400E813229E628CF00770A73 /* PickerSegment.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -146,6 +144,16 @@
 				400E815729F3387800770A73 /* ChatUser.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		400E815A29F35E5D00770A73 /* ExtensionViews */ = {
+			isa = PBXGroup;
+			children = (
+				400E813029E6206D00770A73 /* SignInButton.swift */,
+				400E812E29E61FF800770A73 /* ImagePickerButton.swift */,
+				400E813229E628CF00770A73 /* PickerSegment.swift */,
+			);
+			path = ExtensionViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
