@@ -10,6 +10,8 @@ import Firebase
 
 class ChatViewViewModel: ObservableObject {
     @Published var messageText = ""
+    @Published var scrollViewReader = 0
+    @Published var scrollViewReaderId = "toBottom"
     
     @Published var chatMessages = [ChatMessage]()
     
@@ -40,6 +42,7 @@ class ChatViewViewModel: ObservableObject {
             }
             
             self.messageText = ""
+            self.scrollViewReader += 1
         }
         
         // receiver user document
@@ -76,6 +79,8 @@ class ChatViewViewModel: ObservableObject {
                         self.chatMessages.append(.init(documentId: change.document.documentID, data: data))
                     }
                 })
+                
+                self.scrollViewReader += 1
             }
     }
 }

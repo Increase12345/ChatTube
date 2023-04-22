@@ -25,23 +25,18 @@ struct ChatView: View {
     
     private var messagesBar: some View {
         ScrollView {
-            ForEach(chatViewVM.chatMessages) { message in
-                HStack {
-                    Spacer()
-                    HStack {
-                        Text(message.messageText)
-                            .font(.title3)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.horizontal)
-                    .padding(.vertical, 10)
-                    .background(Color("AccentColor"))
-                    .cornerRadius(10)
+            ScrollViewReader { proxy in
+                ForEach(chatViewVM.chatMessages) { message in
+                    MessageView(message: message)
                 }
-                .padding(.horizontal)
-                .padding(.top, 8)
+                HStack { Spacer() }
+                    .id(chatViewVM.scrollViewReaderId)
+                    .onReceive(chatViewVM.$scrollViewReader) { _ in
+                        withAnimation(.easeOut(duration: 0.5)) {
+                            proxy.scrollTo(chatViewVM.scrollViewReaderId, anchor: .bottom)
+                        }
+                    }
             }
-            HStack { Spacer() }
         }
         .padding(.top, 1)
         .navigationTitle(chatUser.email)
