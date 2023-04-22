@@ -31,6 +31,7 @@
 		400E815829F3387800770A73 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815729F3387800770A73 /* ChatUser.swift */; };
 		400E815D29F3615800770A73 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815C29F3615800770A73 /* NewMessageView.swift */; };
 		400E815F29F36A0800770A73 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400E815E29F36A0800770A73 /* ChatView.swift */; };
+		4029791229F47CA70095D525 /* ChatViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791129F47CA70095D525 /* ChatViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		400E815729F3387800770A73 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		400E815C29F3615800770A73 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		400E815E29F36A0800770A73 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		4029791129F47CA70095D525 /* ChatViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				400E815E29F36A0800770A73 /* ChatView.swift */,
+				4029791129F47CA70095D525 /* ChatViewViewModel.swift */,
 			);
 			path = ChatLog;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				400E814F29F0C68200770A73 /* ChatUserView.swift in Sources */,
 				400E812029E5031800770A73 /* MainMessagesView.swift in Sources */,
 				400E810229E501F900770A73 /* ChatTubeApp.swift in Sources */,
+				4029791229F47CA70095D525 /* ChatViewViewModel.swift in Sources */,
 				400E812629E5E70900770A73 /* LoginView.swift in Sources */,
 				400E815D29F3615800770A73 /* NewMessageView.swift in Sources */,
 				400E812329E5E6DC00770A73 /* MainMessagesViewModel.swift in Sources */,

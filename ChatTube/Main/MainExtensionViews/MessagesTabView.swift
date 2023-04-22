@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MessagesTabView: View {
     @EnvironmentObject var messagesVM: MainMessagesViewModel
-    
+        
     var body: some View {
         TabView {
             MainMessagesView()

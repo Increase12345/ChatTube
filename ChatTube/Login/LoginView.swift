@@ -51,5 +51,6 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
             .environmentObject(LoginViewViewModel())
+            .environmentObject(MainMessagesViewModel())
     }
 }
