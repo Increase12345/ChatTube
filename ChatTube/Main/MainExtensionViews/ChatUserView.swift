@@ -6,20 +6,28 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ChatUserView: View {
+    let chatUser: ChatUser
+    
     var body: some View {
-        HStack {
-            Image(systemName: "person.fill")
-                .font(.system(size: 30))
-                .padding()
+        HStack(spacing: 15) {
+            WebImage(url: URL(string: chatUser.profileImageUrl))
+                .resizable()
+                .scaledToFill()
+                .frame(width: 70, height: 70)
+                .clipShape(Circle())
                 .overlay(
                 Circle()
                     .strokeBorder()
+                    .foregroundColor(.secondary)
                 )
+            
             VStack(alignment: .leading) {
-                Text("User name")
+                Text(chatUser.email)
                     .font(.title3.bold())
+                    .foregroundColor(.primary)
                 Text("message")
                     .foregroundColor(.secondary)
             }
@@ -32,6 +40,6 @@ struct ChatUserView: View {
 
 struct ChatUserView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatUserView()
+        ChatUserView(chatUser: ChatUser(data: .init()))
     }
 }

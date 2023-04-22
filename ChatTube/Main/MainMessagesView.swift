@@ -15,8 +15,12 @@ struct MainMessagesView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 15) {
-                    ForEach(0..<10, id: \.self) { _ in
-                        ChatUserView()
+                    ForEach(messagesVM.users) { user in
+                        NavigationLink {
+                            
+                        } label: {
+                            ChatUserView(chatUser: user)
+                        }
                         Divider()
                     }
                 }
@@ -24,13 +28,16 @@ struct MainMessagesView: View {
                 .padding()
                 .toolbar {
                     Button {
-                        
+                        messagesVM.newMessageView.toggle()
                     } label: {
                         Image(systemName: "square.and.pencil")
                             .font(.title3.bold())
                     }
                 }
             }
+        }
+        .fullScreenCover(isPresented: $messagesVM.newMessageView) {
+            NewMessageView()
         }
     }
 }

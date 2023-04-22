@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct ChatUser {
+struct ChatUser: Identifiable {
+    var id: String { uid }
     let uid: String
     let email: String
     let profileImageUrl: String
@@ -15,7 +16,6 @@ struct ChatUser {
     init(data: [String: Any]) {
         self.uid = data["uid"] as? String ?? ""
         self.email = data["email"] as? String ?? ""
-        let shortEmail = email.components(separatedBy: "@")[0]
         self.profileImageUrl = data["profileImageUrl"] as? String ?? ""
     }
 }

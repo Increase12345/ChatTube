@@ -8,12 +8,16 @@
 import Foundation
 
 class MainMessagesViewModel: ObservableObject {
+
+    @Published var chatUser: ChatUser?
+    @Published var users = [ChatUser]()
     
     @Published var message = ""
-    @Published var chatUser: ChatUser?
+    @Published var newMessageView = false
     
     init() {
         fetchCurrentUser()
+        fetchAllUsers()
     }
     
     func fetchCurrentUser() {
@@ -28,6 +32,21 @@ class MainMessagesViewModel: ObservableObject {
                 
                 guard let data = snapshot?.data() else { return }
                 self.chatUser = .init(data: data)
+            }
+    }
+    
+    func fetchAllUsers() {
+        FirebaseManager.firestore.collection("users")
+            .getDocuments { DocumentsSnapshot, error in
+                if let error = error {
+                    print("Failed to fetch all users \(error)")
+                    return
+                }
+                
+                DocumentsSnapshot?.documents.forEach({ snapshot in
+                    let data = snapshot.data()
+                    self.users.append(.init(data: data))
+                })
             }
     }
 }
