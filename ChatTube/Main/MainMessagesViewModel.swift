@@ -45,7 +45,10 @@ class MainMessagesViewModel: ObservableObject {
                 
                 DocumentsSnapshot?.documents.forEach({ snapshot in
                     let data = snapshot.data()
-                    self.users.append(.init(data: data))
+                    let user = ChatUser(data: data)
+                    if user.uid != FirebaseManager.firebaseAuth.currentUser?.uid {
+                        self.users.append(.init(data: data))
+                    }
                 })
             }
     }

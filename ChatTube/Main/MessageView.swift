@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct MessageView: View {
+    var user: ChatUser
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationStack {
+            Text("Hello, World!")
+                .navigationTitle(user.email)
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView()
+        MessageView(user: ChatUser(data: .init()))
     }
 }

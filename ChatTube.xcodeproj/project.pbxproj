@@ -91,12 +91,12 @@
 		400E810029E501F900770A73 /* ChatTube */ = {
 			isa = PBXGroup;
 			children = (
+				400E816129F3962F00770A73 /* App */,
+				400E816029F395FB00770A73 /* Settings */,
 				400E815929F35BE000770A73 /* Model */,
 				400E815429F3303400770A73 /* Firebase */,
 				400E812429E5E6F100770A73 /* Login */,
 				400E812129E5E68500770A73 /* Main */,
-				400E810129E501F900770A73 /* ChatTubeApp.swift */,
-				400E811D29E502F400770A73 /* ImagePicker.swift */,
 				400E812929E6001A00770A73 /* GoogleService-Info.plist */,
 				400E810529E501FB00770A73 /* Assets.xcassets */,
 				400E810729E501FB00770A73 /* Preview Content */,
@@ -120,7 +120,6 @@
 				400E812229E5E6DC00770A73 /* MainMessagesViewModel.swift */,
 				400E815C29F3615800770A73 /* NewMessageView.swift */,
 				400E815E29F36A0800770A73 /* MessageView.swift */,
-				400E815229F0EA6400770A73 /* SettingsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -168,6 +167,23 @@
 				400E814E29F0C68200770A73 /* ChatUserView.swift */,
 			);
 			path = MainExtensionViews;
+			sourceTree = "<group>";
+		};
+		400E816029F395FB00770A73 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				400E815229F0EA6400770A73 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		400E816129F3962F00770A73 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				400E810129E501F900770A73 /* ChatTubeApp.swift */,
+				400E811D29E502F400770A73 /* ImagePicker.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

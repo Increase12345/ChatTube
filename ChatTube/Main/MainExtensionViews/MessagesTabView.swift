@@ -26,6 +26,7 @@ struct MessagesTabView: View {
             }
             .task {
                 messagesVM.fetchCurrentUser()
+                messagesVM.fetchAllUsers()
         }
     }
 }
