@@ -15,9 +15,12 @@ class MainMessagesViewModel: ObservableObject {
     @Published var message = ""
     @Published var newMessageView = false
     
+    @Published var recentMessages = [RecentMessage]()
+    
     init() {
         fetchCurrentUser()
         fetchAllUsers()
+        fetchRecentMessages()
     }
     
     func fetchCurrentUser() {
@@ -51,5 +54,27 @@ class MainMessagesViewModel: ObservableObject {
                     }
                 })
             }
+    }
+    
+    private func fetchRecentMessages() {
+        guard let uid = FirebaseManager.firebaseAuth.currentUser?.uid else { return }
+        
+        FirebaseManager.firestore.collection(FirebaseConstants.recent_messages)
+            .document(uid)
+            .collection(FirebaseConstants.messages)
+            .addSnapshotListener { querySnapshot, error in
+                if let error = error {
+                    print("Failed to fetch recent message \(error)")
+                    return
+                }
+                
+                querySnapshot?.documentChanges.forEach({ change in
+                    
+                        let docId = change.document.documentID
+                        self.recentMessages.append(.init(documentId: docId, data: change.document.data()))
+                    
+                })
+            }
+        
     }
 }

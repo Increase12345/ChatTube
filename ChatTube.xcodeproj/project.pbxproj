@@ -35,6 +35,7 @@
 		4029791429F48B2E0095D525 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791329F48B2E0095D525 /* ChatMessage.swift */; };
 		4029791629F48C710095D525 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791529F48C710095D525 /* FirebaseConstants.swift */; };
 		4029791829F4A6D00095D525 /* MessagesTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791729F4A6D00095D525 /* MessagesTextView.swift */; };
+		4029791A29F4B59A0095D525 /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791929F4B59A0095D525 /* RecentMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		4029791329F48B2E0095D525 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		4029791529F48C710095D525 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		4029791729F4A6D00095D525 /* MessagesTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTextView.swift; sourceTree = "<group>"; };
+		4029791929F4B59A0095D525 /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				400E815B29F360AD00770A73 /* MainExtensionViews */,
 				400E811F29E5031800770A73 /* MainMessagesView.swift */,
 				400E812229E5E6DC00770A73 /* MainMessagesViewModel.swift */,
+				4029791929F4B59A0095D525 /* RecentMessage.swift */,
 				400E815C29F3615800770A73 /* NewMessageView.swift */,
 			);
 			path = Main;
@@ -145,6 +148,7 @@
 		400E815429F3303400770A73 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				4029791529F48C710095D525 /* FirebaseConstants.swift */,
 				400E815529F3305800770A73 /* FirebaseManager.swift */,
 			);
 			path = Firebase;
@@ -201,7 +205,6 @@
 				4029791129F47CA70095D525 /* ChatViewViewModel.swift */,
 				4029791729F4A6D00095D525 /* MessagesTextView.swift */,
 				4029791329F48B2E0095D525 /* ChatMessage.swift */,
-				4029791529F48C710095D525 /* FirebaseConstants.swift */,
 			);
 			path = ChatLog;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				4029791429F48B2E0095D525 /* ChatMessage.swift in Sources */,
 				400E812629E5E70900770A73 /* LoginView.swift in Sources */,
 				400E815D29F3615800770A73 /* NewMessageView.swift in Sources */,
+				4029791A29F4B59A0095D525 /* RecentMessage.swift in Sources */,
 				400E812329E5E6DC00770A73 /* MainMessagesViewModel.swift in Sources */,
 				400E812F29E61FF800770A73 /* ImagePickerButton.swift in Sources */,
 				400E815F29F36A0800770A73 /* ChatView.swift in Sources */,

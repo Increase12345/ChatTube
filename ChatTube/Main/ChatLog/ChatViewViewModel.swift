@@ -88,5 +88,28 @@ class ChatViewViewModel: ObservableObject {
     
     private func catchLastMessage() {
         
+        guard let fromId = FirebaseManager.firebaseAuth.currentUser?.uid else { return }
+        let toId = chatUser.uid
+        
+        let document = FirebaseManager.firestore.collection(FirebaseConstants.recent_messages)
+            .document(fromId)
+            .collection(FirebaseConstants.messages)
+            .document(toId)
+        
+        let data = [
+            FirebaseConstants.timestamp: Timestamp(),
+            FirebaseConstants.messageText: messageText,
+            FirebaseConstants.fromId: fromId,
+            FirebaseConstants.toId: toId,
+            FirebaseConstants.profileImageUrl: chatUser.profileImageUrl,
+            FirebaseConstants.email: chatUser.email
+        ] as [String : Any]
+        
+        document.setData(data) { error in
+            if let error = error {
+                print("Failed to catch recent message \(error)")
+                return
+            }
+        }
     }
 }
