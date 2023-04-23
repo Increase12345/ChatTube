@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MessageView: View {
+struct MessagesTextView: View {
     let message: ChatMessage
     
     var body: some View {

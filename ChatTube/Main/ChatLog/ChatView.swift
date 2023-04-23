@@ -27,7 +27,7 @@ struct ChatView: View {
         ScrollView {
             ScrollViewReader { proxy in
                 ForEach(chatViewVM.chatMessages) { message in
-                    MessageView(message: message)
+                    MessagesTextView(message: message)
                 }
                 HStack { Spacer() }
                     .id(chatViewVM.scrollViewReaderId)

@@ -41,6 +41,8 @@ class ChatViewViewModel: ObservableObject {
                 return
             }
             
+            self.catchLastMessage()
+            
             self.messageText = ""
             self.scrollViewReader += 1
         }
@@ -82,5 +84,9 @@ class ChatViewViewModel: ObservableObject {
                 
                 self.scrollViewReader += 1
             }
+    }
+    
+    private func catchLastMessage() {
+        
     }
 }

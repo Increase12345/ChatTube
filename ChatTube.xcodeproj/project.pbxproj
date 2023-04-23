@@ -34,7 +34,7 @@
 		4029791229F47CA70095D525 /* ChatViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791129F47CA70095D525 /* ChatViewViewModel.swift */; };
 		4029791429F48B2E0095D525 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791329F48B2E0095D525 /* ChatMessage.swift */; };
 		4029791629F48C710095D525 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791529F48C710095D525 /* FirebaseConstants.swift */; };
-		4029791829F4A6D00095D525 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791729F4A6D00095D525 /* MessageView.swift */; };
+		4029791829F4A6D00095D525 /* MessagesTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029791729F4A6D00095D525 /* MessagesTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +61,7 @@
 		4029791129F47CA70095D525 /* ChatViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewViewModel.swift; sourceTree = "<group>"; };
 		4029791329F48B2E0095D525 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		4029791529F48C710095D525 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
-		4029791729F4A6D00095D525 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		4029791729F4A6D00095D525 /* MessagesTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +199,7 @@
 			children = (
 				400E815E29F36A0800770A73 /* ChatView.swift */,
 				4029791129F47CA70095D525 /* ChatViewViewModel.swift */,
-				4029791729F4A6D00095D525 /* MessageView.swift */,
+				4029791729F4A6D00095D525 /* MessagesTextView.swift */,
 				4029791329F48B2E0095D525 /* ChatMessage.swift */,
 				4029791529F48C710095D525 /* FirebaseConstants.swift */,
 			);
@@ -292,7 +292,7 @@
 				400E815629F3305800770A73 /* FirebaseManager.swift in Sources */,
 				400E811E29E502F400770A73 /* ImagePicker.swift in Sources */,
 				400E813129E6206D00770A73 /* SignInButton.swift in Sources */,
-				4029791829F4A6D00095D525 /* MessageView.swift in Sources */,
+				4029791829F4A6D00095D525 /* MessagesTextView.swift in Sources */,
 				400E812829E5E72600770A73 /* LoginViewViewModel.swift in Sources */,
 				400E814F29F0C68200770A73 /* ChatUserView.swift in Sources */,
 				400E812029E5031800770A73 /* MainMessagesView.swift in Sources */,
